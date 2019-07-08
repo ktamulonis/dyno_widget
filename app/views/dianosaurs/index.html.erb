@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Dianosaurs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Genus</th>
+      <th>Description</th>
+      <th>Period</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dianosaurs.each do |dianosaur| %>
+      <tr>
+        <td><%= dianosaur.name %></td>
+        <td><%= dianosaur.genus %></td>
+        <td><%= dianosaur.description %></td>
+        <td><%= dianosaur.period %></td>
+        <td><%= link_to 'Show', dianosaur %></td>
+        <td><%= link_to 'Edit', edit_dianosaur_path(dianosaur) %></td>
+        <td><%= link_to 'Destroy', dianosaur, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dianosaur', new_dianosaur_path %>

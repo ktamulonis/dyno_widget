@@ -1,0 +1,2 @@
+class Dianosaur < ApplicationRecord
+end
